@@ -13,7 +13,6 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Arrays to hold the different character information
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -34,7 +33,6 @@ function generatePassword() {
     }else
     alert(`Your desired password will have ${passLength} characters.`)
 
-    // Confirmation for each different character subset
     passLower = window.confirm("Click OK if you would like your password to include lowercase characters.");
     passUpper = window.confirm("Click OK if you would like your password to include uppercase characters.");
     passNumber = window.confirm("Click OK if you would like your password to include numerical characters.");
@@ -47,13 +45,12 @@ function generatePassword() {
       passNumber = window.confirm("Click OK if you would like your password to include numerical characters.");
       passSpecial = window.confirm("Click OK if you would like your password to include special characters.");
     }
-
     var userPasswordChar = [];
   var passRandom = "";
 
   // The foor loop to generate password amongst the options that will be chosen
  
-  // Checks each confirmation, and applies it to passRandom
+
   if (passNumber) {
     userPasswordChar = userPasswordChar.concat(number)
   }
@@ -76,6 +73,5 @@ function generatePassword() {
 
   return passRandom;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
